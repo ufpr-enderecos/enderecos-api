@@ -11,7 +11,9 @@ class EnderecoController {
     const id = req.params.id; 
     const endereco = EnderecoModel.getById(id);
     if(endereco == 404){
-      res.status(404).json({ error: `Endereço com ID ${id} não encontrado.` });
+      res.status(404).json({ 
+        error: `Endereço com ID ${id} não encontrado.`, 
+        message: `Endereço com ID ${id} não encontrado.`});
     }
     res.json(endereco);
   }
